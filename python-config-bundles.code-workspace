@@ -1,0 +1,30 @@
+{
+  "folders": [
+      {
+        "name": "root",
+        "path": "."
+      },
+      {
+          "name": "sys-config-bundle",
+          "path": "packages/polywrap-sys-config-bundle"
+      },
+      {
+          "name": "web3-config-bundle",
+          "path": "packages/polywrap-web3-config-bundle"
+      },
+  ],
+  "settings": {
+      "files.exclude": {
+        "**/packages/*": true,
+        "**/docs/*": true
+      },
+      "docify.programmingLanguage": "python",
+      "docify.style": "Google",
+      "docify.intelligentDetection": true,
+      "docify.sidePanelReviewMode": true,
+      "liveServer.settings.multiRootWorkspaceName": "root",
+      "docify.commentService.docstringFormat": "Google",
+      "docify.commentService.sidePanelReviewMode": false,
+      "docify.translateService.docstringFormat": "Google"
+  }
+}

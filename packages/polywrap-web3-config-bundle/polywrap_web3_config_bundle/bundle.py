@@ -33,8 +33,14 @@ web3_bundle: Dict[str, BundlePackage] = {
     "ethreum_provider": BundlePackage(
         uri=Uri.from_str("plugin/ethereum-provider@2.0.0"),
         package=ethreum_provider_package,
-        implements=[Uri.from_str("ens/wraps.eth:ethereum-provider@2.0.0")],
-        redirects_from=[Uri.from_str("ens/wraps.eth:ethereum-provider@2.0.0")],
+        implements=[
+            Uri.from_str("ens/wraps.eth:ethereum-provider@2.0.0"),
+            Uri.from_str("ens/wraps.eth:ethereum-provider@1.1.0"),
+        ],
+        redirects_from=[
+            Uri.from_str("ens/wraps.eth:ethereum-provider@2.0.0"),
+            Uri.from_str("ens/wraps.eth:ethereum-provider@1.1.0"),
+        ],
     ),
     "ipfs_http_client": BundlePackage(
         uri=Uri.from_str("embed/ipfs-http-client@1.0.0"),
@@ -67,27 +73,26 @@ web3_bundle: Dict[str, BundlePackage] = {
         redirects_from=[
             Uri.from_str("ens/wraps.eth:ens-text-record-uri-resolver-ext@1.0.1"),
         ],
-        env={
-            "registryAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
-        },
+        env={"registryAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"},
+    ),
+    "ethereum-wrapper": BundlePackage(
+        uri=Uri.from_str("wrap://ipfs/QmPNnnfiQFyzrgJ7pJ2tWze6pLfqGtHDkWooC2xcsdxqSs"),
+        redirects_from=[
+            Uri.from_str("ipfs/QmS4Z679ZE8WwZSoYB8w9gDSERHAoWG1fX94oqdWpfpDq3")
+        ],
     ),
     "ens_resolver": BundlePackage(
         uri=Uri.from_str("ens/wraps.eth:ens-uri-resolver-ext@1.0.1"),
         implements=[
             *ExtendableUriResolver.DEFAULT_EXT_INTERFACE_URIS,
         ],
-        env={
-            "registryAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
-        },
+        env={"registryAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"},
     ),
     "ens_ipfs_contenthash_resolver": BundlePackage(
-        uri=Uri.from_str("ens/wraps.eth:ens-ipfs-contenthash-uri-resolver-ext@1.0.1"),
+        uri=Uri.from_str("wrap://ipfs/QmRFqJaAmvkYm7HyTxy61K32ArUDRD6UqtaGZEgvsBfeHW"),
         implements=[
             *ExtendableUriResolver.DEFAULT_EXT_INTERFACE_URIS,
         ],
-        env={
-            "registryAddress": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
-        },
     ),
 }
 

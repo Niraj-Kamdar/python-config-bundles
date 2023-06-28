@@ -3,25 +3,25 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "polywrap-web3-config-bundle"
+name = "polywrap-sys-config-bundle"
 version = "0.1.0a1"
 description = "Polywrap System Client Config Bundle"
 authors = ["Niraj <niraj@polywrap.io>"]
 readme = "README.md"
 packages = [
-    { include = "polywrap_web3_config_bundle" },
+    { include = "polywrap_sys_config_bundle" },
 ]
 include = ["**/wrap.info", "**/wrap.wasm"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-polywrap-core = "^0.1.0a33"
-polywrap-client-config-builder = "^0.1.0a33"
-polywrap-uri-resolvers = "^0.1.0a33"
-polywrap-manifest = "^0.1.0a33"
-polywrap-wasm = { path = "/Users/niraj/Documents/Projects/polywrap/python-client/packages/polywrap-wasm", develop = true }
-polywrap-sys-config-bundle = {  path = "../polywrap-sys-config-bundle", develop = true }
-polywrap-ethereum-provider = "^0.1.0a4"
+polywrap-core = "^0.1.0a35"
+polywrap-client-config-builder = "^0.1.0a35"
+polywrap-http-plugin = "0.1.0a8"
+polywrap-uri-resolvers = "^0.1.0a35"
+polywrap-manifest = "^0.1.0a35"
+polywrap-wasm = "^0.1.0a35"
+polywrap-fs-plugin = "0.1.0a4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
@@ -36,7 +36,7 @@ pyright = "^1.1.275"
 pydocstyle = "^6.1.1"
 
 [tool.poetry.group.dev.dependencies]
-polywrap-client = "^0.1.0a33"
+polywrap-client = "^0.1.0a35"
 
 [tool.bandit]
 exclude_dirs = ["tests"]

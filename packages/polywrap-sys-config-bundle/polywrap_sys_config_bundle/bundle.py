@@ -2,14 +2,12 @@
 from typing import Dict
 
 from polywrap_core import Uri
-
-from polywrap_http_plugin import http_plugin
 from polywrap_fs_plugin import file_system_plugin
+from polywrap_http_plugin import http_plugin
 from polywrap_uri_resolvers import ExtendableUriResolver
 
-from .types import BundlePackage
 from .embeds import get_embedded_wrap
-
+from .types import BundlePackage
 
 sys_bundle: Dict[str, BundlePackage] = {
     "http": BundlePackage(

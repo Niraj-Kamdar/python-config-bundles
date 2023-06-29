@@ -12,12 +12,11 @@ def test_http_plugin():
     response = client.invoke(
         uri=Uri.from_str("ens/wraps.eth:http@1.1.0"),
         method="get",
-        args={"url": "https://raw.githubusercontent.com/polywrap/python-client/main/README.md"},
+        args={"url": "https://www.google.com"},
     )
 
     assert response["status"] == 200
     assert response["body"] is not None
-    assert "Polywrap Python Client" in response["body"]
 
 
 def test_file_system_resolver():

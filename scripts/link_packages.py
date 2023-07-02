@@ -6,7 +6,7 @@ import tomlkit
 def link_dependencies(root_dir: Path):
     with open("pyproject.toml", "r") as f:
         pyproject = tomlkit.load(f)
-        packages = set(root_dir.joinpath("packages").iterdir())
+        packages = set(map(lambda x: x.name, root_dir.joinpath("packages").iterdir()))
 
         for dep in list(pyproject["tool"]["poetry"]["dependencies"].keys()):
             if dep.startswith("polywrap-") and dep in packages:
@@ -18,7 +18,7 @@ def link_dependencies(root_dir: Path):
     with open("pyproject.toml", "w") as f:
         tomlkit.dump(pyproject, f)
 
-    subprocess.check_call(["poetry", "lock", "--no-interaction", "--no-cache"])
+    subprocess.check_call(["poetry", "lock"])
     subprocess.check_call(["poetry", "install"])
 
 

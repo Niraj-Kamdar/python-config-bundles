@@ -1648,14 +1648,14 @@ polywrap-plugin = "0.1.0a35"
 
 [[package]]
 name = "polywrap-http-plugin"
-version = "0.1.0a8"
+version = "0.1.0a9"
 description = ""
 category = "main"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "polywrap_http_plugin-0.1.0a8-py3-none-any.whl", hash = "sha256:95ebf8223f0f190b3107fae579e1c94eb5acb5ec12185b540c01977f4fc8a7a7"},
-    {file = "polywrap_http_plugin-0.1.0a8.tar.gz", hash = "sha256:99aa59c769613843b04079ea23a9a5dbf558674d7d1c0ba395e9e554aac63d21"},
+    {file = "polywrap_http_plugin-0.1.0a9-py3-none-any.whl", hash = "sha256:c837a773899fb7c1f5adb5acbc263cda44dd0a0b84cfb817414ee0a9741752aa"},
+    {file = "polywrap_http_plugin-0.1.0a9.tar.gz", hash = "sha256:ba24cd89f8ee0342664cbe826bdc7ce5f6862ae97c0b4ce8e7496dc172220b74"},
 ]
 
 [package.dependencies]
@@ -2844,4 +2844,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "081a2264a9b8fdd4736e64bc11f5a1e02b31490c30ee0ec2e9b6eb500a5ba945"
+content-hash = "e91d133fe58c67e23f99772fe9d0d38ebc6dc539e64ae3f26df31c3942685dc0"

@@ -8,8 +8,9 @@ from pathlib import Path
 def build_dependency_graph():
     dependent_graph: defaultdict[str, set[str]] = defaultdict(set)
     deps_counter: Counter[int] = Counter()
+    packages = set(Path(__file__).parent.parent.joinpath("packages").iterdir())
 
-    for package in Path(__file__).parent.parent.joinpath("packages").iterdir():
+    for package in packages:
         if package.is_dir():
             name = package.name
             deps_counter[name] = 0

@@ -21,7 +21,7 @@ polywrap-uri-resolvers = "^0.1.0a2"
 polywrap-manifest = "^0.1.0a2"
 polywrap-wasm = "^0.1.0a2"
 polywrap-ethereum-provider = "^0.1.0a2"
-polywrap-sys-config-bundle = "^0.1.0a2"
+polywrap-sys-config-bundle = {path = "../polywrap-sys-config-bundle", develop = true}
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

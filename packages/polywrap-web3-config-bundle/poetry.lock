@@ -1719,20 +1719,22 @@ version = "0.1.0a2"
 description = "Polywrap System Client Config Bundle"
 category = "main"
 optional = false
-python-versions = ">=3.10,<4.0"
-files = [
-    {file = "polywrap_sys_config_bundle-0.1.0a2-py3-none-any.whl", hash = "sha256:443f53fbcb01f05037df8a7e2133485f5c7b3874c092e693a6fb67ece77a8e6c"},
-    {file = "polywrap_sys_config_bundle-0.1.0a2.tar.gz", hash = "sha256:a4c034291509075d022f31ac4fa19716dfff61c7f67a3164c932e36123a6a466"},
-]
+python-versions = "^3.10"
+files = []
+develop = true
 
 [package.dependencies]
-polywrap-client-config-builder = ">=0.1.0a2,<0.2.0"
-polywrap-core = ">=0.1.0a2,<0.2.0"
-polywrap-fs-plugin = ">=0.1.0a2,<0.2.0"
-polywrap-http-plugin = ">=0.1.0a2,<0.2.0"
-polywrap-manifest = ">=0.1.0a2,<0.2.0"
-polywrap-uri-resolvers = ">=0.1.0a2,<0.2.0"
-polywrap-wasm = ">=0.1.0a2,<0.2.0"
+polywrap-client-config-builder = "^0.1.0a2"
+polywrap-core = "^0.1.0a2"
+polywrap-fs-plugin = "^0.1.0a2"
+polywrap-http-plugin = "^0.1.0a2"
+polywrap-manifest = "^0.1.0a2"
+polywrap-uri-resolvers = "^0.1.0a2"
+polywrap-wasm = "^0.1.0a2"
+
+[package.source]
+type = "directory"
+url = "../polywrap-sys-config-bundle"
 
 [[package]]
 name = "polywrap-uri-resolvers"
@@ -2844,4 +2846,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "11fc9eabf19884bb0c064f0236ffc0c3edb0f648910d50be9af434514a962005"
+content-hash = "8a95a8ee4b5a5e99c4ee5fca867d12c21eb6dbfea3376181bf284469d034b516"

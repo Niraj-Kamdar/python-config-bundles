@@ -17,7 +17,7 @@ def build_dependency_graph():
                 pyproject = tomlkit.load(f)
                 dependencies = pyproject["tool"]["poetry"]["dependencies"]
                 for dep in dependencies:
-                    if dep.startswith("polywrap-"):
+                    if dep.startswith("polywrap-") and dep in packages:
                         dependent_graph[dep].add(name)
                         deps_counter[name] += 1
 

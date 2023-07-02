@@ -15,12 +15,12 @@ include = ["**/wrap.info", "**/wrap.wasm"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-polywrap-core = "^0.1.0a35"
-polywrap-client-config-builder = "^0.1.0a35"
-polywrap-http-plugin = "0.1.0a8"
-polywrap-uri-resolvers = "^0.1.0a35"
-polywrap-manifest = "^0.1.0a35"
-polywrap-wasm = "^0.1.0a35"
+polywrap-core = "0.1.0a35"
+polywrap-client-config-builder = "0.1.0a35"
+polywrap-http-plugin = "0.1.0a9"
+polywrap-uri-resolvers = "0.1.0a35"
+polywrap-manifest = "0.1.0a35"
+polywrap-wasm = "0.1.0a35"
 polywrap-fs-plugin = "0.1.0a4"
 
 [tool.poetry.dev-dependencies]

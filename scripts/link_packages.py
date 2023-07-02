@@ -1,13 +1,15 @@
+from pathlib import Path
 import subprocess
 import tomlkit
 
 
-def link_dependencies():
+def link_dependencies(root_dir: Path):
     with open("pyproject.toml", "r") as f:
         pyproject = tomlkit.load(f)
+        packages = set(map(lambda x: x.name, root_dir.joinpath("packages").iterdir()))
 
         for dep in list(pyproject["tool"]["poetry"]["dependencies"].keys()):
-            if dep.startswith("polywrap-"):
+            if dep.startswith("polywrap-") and dep in packages:
                 inline_table = tomlkit.inline_table()
                 inline_table.update({"path": f"../{dep}", "develop": True})
                 pyproject["tool"]["poetry"]["dependencies"].pop(dep)
@@ -16,12 +18,11 @@ def link_dependencies():
     with open("pyproject.toml", "w") as f:
         tomlkit.dump(pyproject, f)
 
-    subprocess.check_call(["poetry", "lock", "--no-interaction", "--no-cache"])
+    subprocess.check_call(["poetry", "lock"])
     subprocess.check_call(["poetry", "install"])
 
 
 if __name__ == "__main__":
-    from pathlib import Path
     from dependency_graph import package_build_order
     from utils import ChangeDir
 
@@ -29,4 +30,4 @@ if __name__ == "__main__":
 
     for package in package_build_order():
         with ChangeDir(str(root_dir.joinpath("packages", package))):
-            link_dependencies()
+            link_dependencies(root_dir)

@@ -33,6 +33,18 @@ sys_bundle: Dict[str, BundlePackage] = {
             Uri.from_str("ens/wraps.eth:http-uri-resolver-ext@1.0.1"),
         ],
     ),
+    "wrapscan_resolver": BundlePackage(
+        uri="https://wraps.wrapscan.io/r/polywrap/wrapscan-uri-resolver@1.0",
+        implements=[
+            "wrapscan/polywrap/wrapscan-uri-resolver@1.0",
+            *ExtendableUriResolver.DEFAULT_EXT_INTERFACE_URIS,
+        ],
+        redirects_from=["wrapscan/polywrap/wrapscan-uri-resolver@1.0"],
+    ),
+    "github_resolver": BundlePackage(
+        uri="wrap://ipfs/QmYPp2bQpRxR7WCoiAgWsWoiQzqxyFdqWxp1i65VW8wNv2",
+        implements=ExtendableUriResolver.DEFAULT_EXT_INTERFACE_URIS,
+    ),
     "file_system": BundlePackage(
         uri=Uri.from_str("plugin/file-system@1.0.0"),
         package=file_system_plugin(),

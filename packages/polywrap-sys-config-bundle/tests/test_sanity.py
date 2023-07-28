@@ -32,3 +32,17 @@ def test_file_system_resolver():
     )
 
     assert response["manifest"]
+
+
+def test_http_resolver():
+    config = PolywrapClientConfigBuilder().add(get_sys_config()).build()
+    client = PolywrapClient(config)
+
+    response = client.invoke(
+        uri=Uri.from_str("ens/wraps.eth:http-uri-resolver-ext@1.0.1"),
+        method="tryResolveUri",
+        args={"authority": "http", "path": "wraps.wrapscan.io/r/polywrap/wrapscan-uri-resolver@1.0"},
+    )
+
+    assert response["uri"]
+    assert Uri.from_str(response["uri"]).authority == "ipfs"

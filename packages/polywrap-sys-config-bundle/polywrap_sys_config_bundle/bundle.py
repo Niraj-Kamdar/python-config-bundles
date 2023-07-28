@@ -34,14 +34,14 @@ sys_bundle: Dict[str, BundlePackage] = {
         ],
     ),
     "wrapscan_resolver": BundlePackage(
-        uri=Uri.from_str(
-            "wrap://https/wraps.wrapscan.io/r/polywrap/wrapscan-uri-resolver@1.0"
+        uri=Uri(
+            "https", "wraps.wrapscan.io/r/polywrap/wrapscan-uri-resolver@1.0"
         ),
         implements=[
-            Uri.from_str("wrapscan/polywrap/wrapscan-uri-resolver@1.0"),
+            Uri.from_str("wrapscan.io/polywrap/wrapscan-uri-resolver@1.0"),
             *ExtendableUriResolver.DEFAULT_EXT_INTERFACE_URIS,
         ],
-        redirects_from=[Uri.from_str("wrapscan/polywrap/wrapscan-uri-resolver@1.0")],
+        redirects_from=[Uri.from_str("wrapscan.io/polywrap/wrapscan-uri-resolver@1.0")],
     ),
     "github_resolver": BundlePackage(
         uri=Uri.from_str("wrap://ipfs/QmYPp2bQpRxR7WCoiAgWsWoiQzqxyFdqWxp1i65VW8wNv2"),

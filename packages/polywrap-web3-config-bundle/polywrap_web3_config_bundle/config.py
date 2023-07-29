@@ -4,7 +4,7 @@ from polywrap_client_config_builder import BuilderConfig, PolywrapClientConfigBu
 from .bundle import web3_bundle
 
 
-def get_web3_bundle() -> BuilderConfig:
+def get_web3_config() -> BuilderConfig:
     """Get the system configuration for Polywrap Client."""
     builder = PolywrapClientConfigBuilder()
     for package in web3_bundle.values():
@@ -12,4 +12,4 @@ def get_web3_bundle() -> BuilderConfig:
     return builder.config
 
 
-__all__ = ["get_web3_bundle"]
+__all__ = ["get_web3_config"]

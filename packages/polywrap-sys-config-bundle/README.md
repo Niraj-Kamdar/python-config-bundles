@@ -1,3 +1,2 @@
-# polywrap-test-cases
+# polywrap-sys-config-bundle
 
-This package allows fetching wrap test-cases from the wrap-test-harness.
